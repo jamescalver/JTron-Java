@@ -323,6 +323,11 @@ public class JTronClient {
 	  gameWindow.message("The game is over");
 	}
 
+	// If the players quits, inMsg might be null
+	if (inMsg == null) {
+		return(null);
+	}
+	
 	if (inMsg.type == Message.kTermMessage) {
 	  processTerm((Term)inMsg);
 	  return((Term)inMsg);
